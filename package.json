@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "thing sharing in the browser",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "dist-js": "node_modules/.bin/browserify -t brfs --debug -e src/js/main.js -o build/main.js",
     "dist-css": "node_modules/.bin/node-sass src/styles/main.scss build/main.css",
     "dist-html": "cp src/main.html build/main.html",
@@ -15,7 +15,10 @@
   "devDependencies": {
     "brfs": "^1.2.0",
     "browserify": "^8.0.2",
-    "node-sass": "^2.0.0-beta"
+    "jscs": "^1.9.0",
+    "jshint": "^2.5.11",
+    "node-sass": "^2.0.0-beta",
+    "precommit-hook": "^1.0.7"
   },
   "dependencies": {
     "simple-peer": "^3.6.7"
