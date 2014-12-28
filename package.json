@@ -1,0 +1,23 @@
+{
+  "name": "toma",
+  "version": "1.0.0",
+  "description": "thing sharing in the browser",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist-js": "node_modules/.bin/browserify -t brfs --debug -e src/js/main.js -o build/main.js",
+    "dist-css": "node_modules/.bin/node-sass src/styles/main.scss build/main.css",
+    "dist-html": "cp src/main.html build/main.html",
+    "dist-other": "cp src/manifest.json build/manifest.json && cp -r img build/img",
+    "build": "npm run-script dist-js && npm run-script dist-css && npm run-script dist-html && npm run-script dist-other"
+  },
+  "author": "David Dias <daviddias.p@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "brfs": "^1.2.0",
+    "browserify": "^8.0.2",
+    "node-sass": "^2.0.0-beta"
+  },
+  "dependencies": {
+    "simple-peer": "^3.6.7"
+  }
+}
